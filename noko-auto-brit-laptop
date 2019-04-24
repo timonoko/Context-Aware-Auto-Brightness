@@ -1,0 +1,11 @@
+while true ; do
+scrot /tmp/hui.jpg
+a=$(identify -format "%[mean]" /tmp/hui.jpg)
+b=$(echo "scale=2 ; 0.6 + 5000 / $a" | bc )
+xrandr --output LVDS-1 --gamma 1.1:1.0:0.9  --brightness $b
+sleep 0.1
+done
+
+
+
+
