@@ -1,0 +1,11 @@
+
+while true ; do
+ scrot /tmp/scave.jpg
+ a=$(identify -format "%[mean]" /tmp/scave.jpg)
+ b=$(echo "scale=2 ; 0.7 + 1000 / $a" | bc )
+ xrandr --output DVI-I-1 --gamma 1.1:1.0:0.9  --brightness $b
+ sleep 0.1
+done
+
+
+
