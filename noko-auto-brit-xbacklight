@@ -6,7 +6,7 @@ while true ; do
  a=$(identify -format "%[mean]" /tmp/scave.jpg)
  b=$(echo "scale=2 ; ($base + 2000 / $a) * 70 " | bc )
  xbacklight = "$b"
- echo $a $b
+# echo $a $b
 sleep 0.1
 done
 
