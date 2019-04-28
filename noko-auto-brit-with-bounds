@@ -1,12 +1,11 @@
 if [ "$1" == "" ] ; then base="0.7" ; else base="$1" ; fi
-
 while true ; do
  scrot /tmp/scave.jpg
  a=$(identify -format "%[mean]" /tmp/scave.jpg)
  b=$(echo "scale=2;z=$base+1000/$a;if(z>2)z=2;z"| bc )
  xrandr --output DVI-I-1 --gamma 1.1:1.0:0.9  --brightness $b
  echo $b
-sleep 0.1
+ sleep 0.1
 done
 
 
