@@ -1,3 +1,4 @@
+#! /bin/bash
 if [ "$1" == "" ] ; then base="0.7" ; else base="$1" ; fi
 while true ; do
  scrot /tmp/scave.jpg
