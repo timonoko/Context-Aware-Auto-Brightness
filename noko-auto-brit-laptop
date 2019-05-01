@@ -1,3 +1,4 @@
+#! /bin/bash
 # This for my Laptop. xrandr tells what is the display device to use
 # xbacklight does make more sense on laptop. But it does not work.
 
