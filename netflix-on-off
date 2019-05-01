@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [ -f /tmp/netfix ] ; then
+ kill $(cat /tmp/netfix )
+ rm -f /tmp/netfix 
+ xrandr --output LVDS1 --gamma 1:1:1 --brightness 1.0
+ xbacklight = $(cat /tmp/backlight)
+else
+ noko-auto-brit-chromebook&
+ echo $! > /tmp/netfix
+ echo $(xbacklight) > /tmp/backlight
+ xrandr --output LVDS1 --gamma 1.2:1.1:1.0 --brightness 1.1
+fi
