@@ -1,3 +1,5 @@
+#! /bin/bash
+
 # This for my Desktop. xrandr tells what is the display device to use.
 
 while true ; do
