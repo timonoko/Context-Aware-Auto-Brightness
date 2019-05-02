@@ -9,6 +9,6 @@ if [ -f /tmp/netfix ] ; then
 else
  echo $(xbacklight) > /tmp/backlight
  noko-auto-brit-xbacklight&
- $! > /tmp/netfix
+ echo $! > /tmp/netfix
  xrandr --output LVDS1 --gamma 1.2:1.1:1.0 --brightness 1.1
 fi
