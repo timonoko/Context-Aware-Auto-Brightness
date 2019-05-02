@@ -1,0 +1,11 @@
+#! /bin/bash
+# ON/OFF-button for Netflix in Desktop
+
+if [ -f /tmp/netfix ] ; then
+ kill $(cat /tmp/netfix )
+ rm -f /tmp/netfix 
+ xrandr --output DVI-I-1 --brightness 0.75 --gamma 1.01:1.0:1.0 
+else
+ noko-auto-brit 1&
+ echo $! > /tmp/netfix
+fi
