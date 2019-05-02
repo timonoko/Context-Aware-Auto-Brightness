@@ -6,6 +6,6 @@ if [ -f /tmp/netfix ] ; then
  rm -f /tmp/netfix 
  xrandr --output DVI-I-1 --brightness 0.75 --gamma 1.01:1.0:1.0 
 else
- noko-auto-brit 1&
+ noko-auto-brit-with-bounds 1&
  echo $! > /tmp/netfix
 fi
