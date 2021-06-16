@@ -1,5 +1,5 @@
 #! /bin/bash
-# This is from Chromebook with GalliumOs
+# This is from Fujitsu Lifebook with Ubuntu20
 
 if [ "$1" == "" ] ; then base="0.3" ; else base="$1" ; fi
 while true ; do
