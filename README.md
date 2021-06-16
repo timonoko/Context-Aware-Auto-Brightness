@@ -1,6 +1,6 @@
 Watching Underworld on laptop was too annoying. Invented adaptive brightness.
 
-sudo apt-get install bc, scrot, imagemagick, xrandr, xbacklight
+sudo apt-get install bc scrot imagemagick xrandr xbacklight backlightctl
 
 xrandr tells you the current device name.
 
