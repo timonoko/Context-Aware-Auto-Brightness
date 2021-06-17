@@ -1,15 +1,16 @@
 #! /bin/bash
-# This is from Fujitsu Lifebook with Ubuntu20
-# but brightness scale vary a lot on differrent machine
-# brightnessctl tells the max number
+# This is from Chromebook with GalliumOs
 
 if [ "$1" == "" ] ; then base="0.3" ; else base="$1" ; fi
 while true ; do
  scrot /tmp/scave.jpg
  a=$(identify -format "%[mean]" /tmp/scave.jpg)
- b=$(echo "scale=1 ; ($base + 2000 / $a) * 7 " | bc )
+ if (( "${a%.*}" < 1000 )) ; then
+    b=1
+ else
+     b=$(echo "scale=1 ; ($base + 2000 / $a) * 7 " | bc )
+ fi
  rm -f /tmp/scave.jpg
-# xbacklight = "$b"
  sudo brightnessctl -q s $b
  echo $a $b
  sleep 0.5
