@@ -6,4 +6,4 @@ xrandr tells you the current device name.
 
 Gamma-correction 1.1:1.0:0.9 is for movies.
 
-Some recognize black frame and they do not try to brigthen that.
+Some recognize black frame and they do not try to brighten that.
