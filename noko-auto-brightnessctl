@@ -1,6 +1,9 @@
 #! /bin/bash
 # This is from Chromebook with GalliumOs
 
+echo 1 > /tmp/noko-gamma
+
+prev=0
 if [ "$1" == "" ] ; then base="0.3" ; else base="$1" ; fi
 while true ; do
  scrot /tmp/scave.jpg
@@ -12,7 +15,12 @@ while true ; do
  fi
  rm -f /tmp/scave.jpg
  sudo brightnessctl -q s $b
- echo $a $b
+ g=$(echo "scale=1 ; $b * 0.2 + 0.3 " | bc )
+  gamma $g
+ # notify-send $b
+ echo $a $b $g
+ prev=$b
+
  sleep 0.5
 done
 
