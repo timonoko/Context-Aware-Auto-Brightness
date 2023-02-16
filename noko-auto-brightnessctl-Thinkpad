@@ -1,0 +1,29 @@
+#! /bin/bash
+# This is for Thinkpad x260
+
+echo 1 > /tmp/noko-gamma
+
+prev=0
+while true ; do
+ scrot /tmp/scave.jpg
+ a=$(identify -format "%[mean]" /tmp/scave.jpg)
+ if (( "${a%.*}" < 1000 )) ; then
+    b=10
+ else
+     b=$(echo "scale=1 ; 500000 / $a " | bc )
+ fi
+
+ g=$(echo "scale=1 ; 1+$b/200 " | bc )
+ 
+ rm -f /tmp/scave.jpg
+ gamma $g
+ sudo brightnessctl -q s $b%
+ # notify-send $b
+ echo $a $b $g
+ prev=$b
+
+ sleep 0.5
+done
+
+
+
